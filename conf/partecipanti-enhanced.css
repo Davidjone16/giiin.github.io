@@ -1,0 +1,177 @@
+/* Override moderno per PARTICIPANTI */
+
+/* Layout grid */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.participant-card {
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  box-shadow: var(--shadow-light);
+  padding: 18px;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.participant-card::before {
+  content: '';
+  position: absolute;
+  inset: -60px -60px auto auto;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at 30% 30%, rgba(197, 163, 103, 0.45), transparent 60%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.participant-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.participant-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.participant-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(40, 13, 139, 0.08);
+  color: var(--bg-dark);
+}
+
+.participant-name strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #111827;
+}
+
+.participant-name span {
+  display: block;
+  font-size: 0.95rem;
+  color: rgba(17, 24, 39, 0.75);
+  margin-top: 2px;
+}
+
+.participant-badge {
+  margin-left: auto;
+  font-weight: 700;
+  background: rgba(197, 163, 103, 0.14);
+  color: var(--bg-dark);
+  border: 1px solid rgba(197, 163, 103, 0.25);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.participant-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(17, 24, 39, 0.8);
+  font-size: 0.92rem;
+}
+
+.participant-contacts {
+  border-top: 1px dashed rgba(17, 24, 39, 0.12);
+  border-bottom: 1px dashed rgba(17, 24, 39, 0.12);
+  padding: 12px 0;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.contacts-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(17, 24, 39, 0.55);
+  margin-bottom: 10px;
+}
+
+.contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin: 6px 8px 0 0;
+  border-radius: 14px;
+  background: rgba(17, 24, 39, 0.03);
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  color: rgba(17, 24, 39, 0.85);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.contact-pill:hover {
+  background: rgba(197, 163, 103, 0.12);
+  border-color: rgba(197, 163, 103, 0.25);
+}
+
+.participant-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-card {
+  border: 1px solid rgba(40, 13, 139, 0.14);
+  background: rgba(40, 13, 139, 0.04);
+  color: var(--bg-dark);
+  padding: 10px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-fast);
+}
+
+.btn-card:hover {
+  background: rgba(40, 13, 139, 0.08);
+  transform: translateY(-1px);
+}
+
+.btn-card.secondary {
+  border-color: rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.06);
+  color: rgb(185, 28, 28);
+}
+
+.btn-card.secondary:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+@media (max-width: 900px) {
+  .participants-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
