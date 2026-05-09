@@ -31,13 +31,13 @@
                 <ul>
                     <li><a href="index.html"><i class="fa-solid fa-house"></i> Home page</a></li>
                     <li><a href="partecipanti.html"><i class="fa-solid fa-users"></i> Elenco partecipanti</a></li>
-                    <li class="active"><a href="iscrizione.html"><i class="fa-solid fa-file-signature"></i> Nuova iscrizione</a></li>
+                    <li><a href="iscrizione.html"><i class="fa-solid fa-file-signature"></i> Nuova iscrizione</a></li>
                 </ul>
 
                 <p class="menu-label">GESTIONE</p>
                 <ul>
                     <li><a href="#"><i class="fa-solid fa-list-check"></i> Iscrizioni</a></li>
-                    <li><a href="#"><i class="fa-solid fa-user-plus"></i> Aggiungi partecipante</a></li>
+                    <li class="active"><a href="nuovo.html"><i class="fa-solid fa-user-plus"></i> Aggiungi partecipante</a></li>
                     <li><a href="#"><i class="fa-solid fa-book"></i> Guida</a></li>
                 </ul>
             </nav>
@@ -96,7 +96,12 @@
                     </div>
                     <div class="form-group">
                         <label for="codice-fiscale">Codice fiscale</label>
-                        <input type="text" id="codice-fiscale" name="codice-fiscale" placeholder="Inserisci il codice fiscale" required>
+                        <input type="text" id="codice-fiscale" name="codice-fiscale" placeholder="Il codice fiscale verrà calcolato automaticamente" required>
+                        <small id="cf-info" class="field-note">Il codice fiscale viene compilato automaticamente quando nome, data di nascita, genere e luogo di nascita sono completi.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthplace">Luogo di nascita</label>
+                        <input type="text" id="birthplace" name="birthplace" placeholder="Inserisci il comune di nascita" required>
                     </div>
                     <div class="form-group">
                         <label for="date-of-birth">Data di nascita</label>
@@ -148,11 +153,12 @@
                         <textarea id="notes" name="notes" placeholder="Inserisci eventuali note" rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Registra iscrizione</button>
+                </form>
             </section>
         </main>
     </div>
 
 
-    <script src="script.js"></script>
+    <script src="nuovo.js"></script>
 </body>
 </html>
