@@ -383,7 +383,7 @@ body {
     }
     .main-content { padding: 1.5rem; }
     .registration-form { grid-template-columns: 1fr; }
-    .form-group.full-width, .form-actions { grid-column: span 1; }
+    .form-group.full-width, .form-actions { grid-column: span 1.5; }
     .hero-card { text-align: center; padding: 30px 20px; }
     .hero-content { flex-direction: column; gap: 15px; }
 }
@@ -395,4 +395,81 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Aggiunte al tuo CSS esistente */
+
+.field-note {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: var(--accent-gold);
+    font-style: italic;
+}
+
+textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid #eee;
+    border-radius: 12px;
+    background-color: #fafafa;
+    font-size: 1rem;
+    resize: vertical;
+    transition: var(--transition-fast);
+}
+
+textarea:focus {
+    border-color: var(--accent-gold);
+    outline: none;
+    background-color: #fff;
+}
+
+/* Fix per input readonly (Codice Fiscale) */
+input[readonly] {
+    background-color: #ececec;
+    cursor: not-allowed;
+    color: var(--bg-dark);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.registration-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 30px; /* Spazio verticale e orizzontale */
+}
+
+/* Allineamento icone sidebar */
+.menu i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Gestione Sidebar Mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed !important; /* Deve sovrapporsi a tutto */
+        top: 0;
+        left: -100%; /* Completamente nascosta a sinistra */
+        width: 280px; /* Larghezza fissa su mobile */
+        height: 100vh;
+        z-index: 99999 !important; /* Numero altissimo per stare sopra la top-bar */
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex !important; /* Sovrascrive eventuali nascondimenti */
+        box-shadow: 10px 0 30px rgba(0,0,0,0.2);
+    }
+
+    /* Classe attivata dal JS */
+    .sidebar.mobile-open {
+        left: 0 !important;
+    }
+
+    /* Rendi l'icona hamburger più facile da cliccare */
+    .breadcrumb .fa-bars {
+        font-size: 1.4rem;
+        padding: 5px 15px 5px 0;
+        color: var(--bg-dark);
+        display: inline-block !important;
+        z-index: 1000;
+    }
 }

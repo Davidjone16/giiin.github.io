@@ -388,7 +388,23 @@ body {
 
 @media (max-width: 768px) {
     .container { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; padding: 1.5rem; position: relative; }
+    .sidebar {
+        position: fixed !important;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        padding: 1.5rem;
+        z-index: 99999 !important;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex !important;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.2);
+    }
+
+    .sidebar.mobile-open {
+        left: 0 !important;
+    }
+
     .sidebar-footer, .menu-label, .menu li.active::before { display: none; }
     .menu { margin-top: 10px; }
     .menu ul { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 10px; }

@@ -6,6 +6,7 @@
     <title>GIIN - Dashboard</title>
     <link rel="stylesheet" href="shared.css">
     <link rel="stylesheet" href="nuovo.css">
+    <link rel="preload" as="script" href="shared.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="nuovo.js" rel="preload" as="script">
 </head>
@@ -56,7 +57,6 @@
             <header class="top-bar">
                 <div class="breadcrumb">
                     <i class="fa-solid fa-bars"></i>
-                    <i class="fa-solid fa-house-chimney"></i>
                     <span>Home page</span>
                 </div>
                 <div class="top-icons">
@@ -80,85 +80,84 @@
             
                 </div>
             </section>
-            <section class="content-section">
-                <form class="registration-form">
-                    <div class="form-group">
-                        <label for="name">Nome completo</label>
-                        <input type="text" id="name" name="name" placeholder="Inserisci il nome completo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Inserisci l'email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Numero di telefono</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Inserisci il numero di telefono" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="codice-fiscale">Codice fiscale</label>
-                        <input type="text" id="codice-fiscale" name="codice-fiscale" placeholder="Il codice fiscale verrà calcolato automaticamente" required>
-                        <small id="cf-info" class="field-note">Il codice fiscale viene compilato automaticamente quando nome, data di nascita, genere e luogo di nascita sono completi.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="birthplace">Luogo di nascita</label>
-                        <input type="text" id="birthplace" name="birthplace" placeholder="Inserisci il comune di nascita" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="date-of-birth">Data di nascita</label>
-                        <input type="date" id="date-of-birth" name="date-of-birth" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="gender">Genere</label>  
-                        <select id="gender" name="gender" required>
-                            <option value="">Seleziona il genere</option>
-                            <option value="male">Maschio</option>
-                            <option value="female">Femmina</option>
-                            <option value="other">Altro</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Indirizzo</label>
-                        <input type="text" id="address" name="address" placeholder="Inserisci l'indirizzo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="city">Città</label>
-                        <input type="text" id="city" name="city" placeholder="Inserisci la città" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="postal-code">CAP</label>
-                        <input type="text" id="postal-code" name="postal-code" placeholder="Inserisci il CAP" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="country">Paese</label>
-                        <input type="text" id="country" name="country" placeholder="Inserisci il paese" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="emergency-contact">Contatto di emergenza</label>
-                        <input type="text" id="emergency-contact" name="emergency-contact" placeholder="Inserisci il contatto di emergenza" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="t-shirt-size">Taglia</label>
-                        <select id="t-shirt-size" name="t-shirt-size" required>
-                            <option value="">Seleziona la taglia</option>
-                            <option value="xs">XS</option>
-                            <option value="s">S</option>
-                            <option value="m">M</option>
-                            <option value="l">L</option>
-                            <option value="xl">XL</option>
-                            <option value="xxl">XXL</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="notes">Note</label>
-                        <textarea id="notes" name="notes" placeholder="Inserisci eventuali note" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Registra iscrizione</button>
-                </form>
-            </section>
+            <section class="content-section fade-in">
+    <form class="registration-form">
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Inserisci il nome" required>
+        </div>
+        <div class="form-group">
+            <label for="surname">Cognome</label>
+            <input type="text" id="surname" name="surname" placeholder="Inserisci il cognome" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Inserisci l'email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Numero di telefono</label>
+            <input type="tel" id="phone" name="phone" placeholder="Inserisci il numero di telefono" required>
+        </div>
+
+        <div class="form-group">
+            <label for="birthplace">Luogo di nascita</label>
+            <input type="text" id="birthplace" name="birthplace" list="comuni-list" placeholder="Comune di nascita" required>
+            <datalist id="comuni-list"></datalist>
+        </div>
+        <div class="form-group">
+            <label for="date-of-birth">Data di nascita</label>
+            <input type="date" id="date-of-birth" name="date-of-birth" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Genere</label>  
+            <select id="gender" name="gender" required>
+                <option value="">Seleziona</option>
+                <option value="male">Maschio</option>
+                <option value="female">Femmina</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="codice-fiscale">Codice fiscale</label>
+            <input type="text" id="codice-fiscale" name="codice-fiscale" placeholder="Calcolo automatico..." readonly>
+        </div>
+
+        <div class="form-group full-width">
+            <small id="cf-info" class="field-note">Compila i dati anagrafici per generare il codice fiscale.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="city">Città di Residenza</label>
+            <input type="text" id="city" name="city" placeholder="Inserisci la città" required>
+        </div>
+        <div class="form-group">
+            <label for="t-shirt-size">Taglia T-Shirt</label>
+            <select id="t-shirt-size" name="t-shirt-size" required>
+                <option value="">Seleziona</option>
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+            </select>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="notes">Note</label>
+            <textarea id="notes" name="notes" placeholder="Allergie, intolleranze o note particolari" rows="3"></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-save">Registra iscrizione</button>
+        </div>
+    </form>
+</section>
         </main>
     </div>
 
 
+    <script src="shared.js"></script>
     <script src="nuovo.js"></script>
 </body>
 </html>

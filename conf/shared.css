@@ -204,6 +204,16 @@ img {
   font-weight: 600;
 }
 
+.breadcrumb .fa-bars {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .breadcrumb .fa-bars {
+    display: inline-block;
+  }
+}
+
 .top-icons {
   display: flex;
   align-items: center;

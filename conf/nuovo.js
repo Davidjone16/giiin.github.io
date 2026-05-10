@@ -1,8 +1,10 @@
 (function() {
     let comuniDatabase = [];
 
+    // Riferimenti agli elementi DOM
     const inputs = {
         name: document.getElementById('name'),
+        surname: document.getElementById('surname'), // Nuovo campo separato
         dob: document.getElementById('date-of-birth'),
         gender: document.getElementById('gender'),
         place: document.getElementById('birthplace'),
@@ -21,10 +23,11 @@
 
     const EVEN_MAP = {
         '0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'A':0,'B':1,'C':2,'D':3,
-        'E':4,'F':5,'G':6,'H':7,'I':8,'G':6,'H':7,'I':8,'J':9,'K':10,'L':11,'M':12,'N':13,
-        'O':14,'P':15,'Q':16,'R':17,'S':18,'T':19,'U':20,'V':21,'W':22,'X':23,'Y':24,'Z':25
+        'E':4,'F':5,'G':6,'H':7,'I':8,'J':9,'K':10,'L':11,'M':12,'N':13,'O':14,'P':15,'Q':16,
+        'R':17,'S':18,'T':19,'U':20,'V':21,'W':22,'X':23,'Y':24,'Z':25
     };
 
+    // Caricamento database comuni
     async function loadComuni() {
         try {
             const response = await fetch('comuni.json'); 
@@ -33,19 +36,16 @@
             const fragment = document.createDocumentFragment();
             comuniDatabase.forEach(c => {
                 const option = document.createElement('option');
-                // Nel nuovo formato, il nome è all'indice 0
                 option.value = c[0]; 
                 fragment.appendChild(option);
             });
             inputs.datalist.appendChild(fragment);
-            console.log("Database ottimizzato caricato.");
         } catch (error) {
-            console.error("Errore:", error);
-            inputs.info.textContent = "Errore caricamento comuni.";
+            console.error("Errore caricamento database:", error);
         }
     }
 
-    const normalize = (str) => str ? str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().trim() : '';
+    const normalize = (str) => str ? str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/[^A-Z]/g, '').trim() : '';
 
     const getChars = (str, type) => {
         const s = normalize(str);
@@ -64,6 +64,7 @@
     function codeName(name) {
         const cons = getChars(name, 'consonants');
         const vow = getChars(name, 'vowels');
+        // Regola del nome: se ci sono 4 o più consonanti, si prendono la 1a, la 3a e la 4a
         if (cons.length >= 4) return cons[0] + cons[2] + cons[3];
         const chars = [...cons, ...vow, 'X', 'X', 'X'];
         return chars.slice(0, 3).join('');
@@ -75,55 +76,63 @@
         const y = d.getFullYear().toString().slice(-2);
         const m = MONTH_LETTERS[d.getMonth()];
         let day = d.getDate();
-        if (gender.toUpperCase() === 'FEMALE') day += 40;
+        if (gender.toLowerCase() === 'female') day += 40;
         return `${y}${m}${day.toString().padStart(2, '0')}`;
     }
 
     function calculateCF() {
-        const nameVal = inputs.name.value.trim();
+        const nameVal = inputs.name.value;
+        const surnameVal = inputs.surname.value;
         const dobVal = inputs.dob.value;
         const genderVal = inputs.gender.value;
-        const placeInput = normalize(inputs.place.value);
+        const placeInput = inputs.place.value.toUpperCase().trim();
 
-        if (!nameVal || !dobVal || !placeInput) {
+        // Controllo se i campi necessari sono compilati
+        if (!nameVal || !surnameVal || !dobVal || !genderVal || !placeInput) {
             inputs.result.value = '';
+            inputs.info.textContent = "Compila tutti i campi anagrafici per il calcolo.";
+            inputs.info.style.color = "var(--text-gray)";
             return;
         }
 
-        // RICERCA AGGIORNATA: c[0] è il nome del comune
-        const comune = comuniDatabase.find(c => normalize(c[0]) === placeInput);
+        // Ricerca Comune
+        const comune = comuniDatabase.find(c => c[0].toUpperCase() === placeInput);
 
         if (!comune) {
             inputs.result.value = '';
-            inputs.info.textContent = 'Comune non trovato.';
+            inputs.info.textContent = "Comune non trovato nel database.";
+            inputs.info.style.color = "#ff4d4d";
             return;
         }
 
-        const belfioreCode = comune[1]; // Il codice è all'indice 1
-        const surnamePart = codeSurname(nameVal.split(' ').pop());
-        const namePart = codeName(nameVal.split(' ')[0]);
+        const belfioreCode = comune[1];
+        const surnamePart = codeSurname(surnameVal);
+        const namePart = codeName(nameVal);
         const datePart = codeDate(dobVal, genderVal);
 
         const partial = `${surnamePart}${namePart}${datePart}${belfioreCode}`;
         
+        // Calcolo Carattere di Controllo
         let sum = 0;
         for (let i = 0; i < partial.length; i++) {
             const char = partial[i];
-            // i è 0-based, quindi pari/dispari sono invertiti rispetto alla logica 1-based del CF
+            // i=0 è la prima posizione (dispari per il fisco), i=1 è la seconda (pari)
             sum += (i % 2 === 0) ? ODD_MAP[char] : EVEN_MAP[char];
         }
         
         const checkChar = String.fromCharCode(65 + (sum % 26));
+        
         inputs.result.value = partial + checkChar;
-        inputs.info.textContent = 'Calcolo completato.';
+        inputs.info.textContent = "Codice Fiscale generato correttamente.";
+        inputs.info.style.color = "var(--accent-gold)";
     }
 
-    Object.values(inputs).forEach(el => {
-        if (el && el.id !== 'codice-fiscale' && el.tagName !== 'DATALIST') {
-            el.addEventListener('input', calculateCF);
-            el.addEventListener('change', calculateCF);
-        }
+    // Aggiunta eventi a tutti i campi
+    [inputs.name, inputs.surname, inputs.dob, inputs.gender, inputs.place].forEach(el => {
+        el.addEventListener('input', calculateCF);
+        el.addEventListener('change', calculateCF);
     });
 
+    // Avvio caricamento database
     loadComuni();
 })();
