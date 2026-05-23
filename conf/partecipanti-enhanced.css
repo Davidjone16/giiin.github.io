@@ -7,8 +7,8 @@
 
 .participant-card {
   border-radius: 18px;
-  background: #ffffff;
-  border: 1px solid rgba(17, 24, 39, 0.06);
+  background: var(--text-white);
+  border: 1px solid var(--dark-006);
   box-shadow: var(--shadow-light);
   padding: 18px;
   transition: var(--transition-normal);
@@ -22,7 +22,7 @@
   inset: -60px -60px auto auto;
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle at 30% 30%, rgba(197, 163, 103, 0.45), transparent 60%);
+  background: radial-gradient(circle at 30% 30%, var(--gold-045), var(--transparent) 60%);
   opacity: 0.45;
   pointer-events: none;
 }
@@ -48,29 +48,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(40, 13, 139, 0.08);
+  background: var(--primary-008);
   color: var(--bg-dark);
 }
 
 .participant-name strong {
   display: block;
   font-size: 1.05rem;
-  color: #111827;
+  color: var(--text-body);
 }
 
 .participant-name span {
   display: block;
   font-size: 0.95rem;
-  color: rgba(17, 24, 39, 0.75);
+  color: var(--dark-075);
   margin-top: 2px;
 }
 
 .participant-badge {
   margin-left: auto;
   font-weight: 700;
-  background: rgba(197, 163, 103, 0.14);
+  background: var(--gold-014);
   color: var(--bg-dark);
-  border: 1px solid rgba(197, 163, 103, 0.25);
+  border: 1px solid var(--gold-025);
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -89,13 +89,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgba(17, 24, 39, 0.8);
+  color: var(--dark-080);
   font-size: 0.92rem;
 }
 
 .participant-contacts {
-  border-top: 1px dashed rgba(17, 24, 39, 0.12);
-  border-bottom: 1px dashed rgba(17, 24, 39, 0.12);
+  border-top: 1px dashed var(--dark-012);
+  border-bottom: 1px dashed var(--dark-012);
   padding: 12px 0;
   margin-bottom: 14px;
   position: relative;
@@ -106,7 +106,7 @@
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(17, 24, 39, 0.55);
+  color: var(--dark-055);
   margin-bottom: 10px;
 }
 
@@ -117,17 +117,17 @@
   padding: 10px 12px;
   margin: 6px 8px 0 0;
   border-radius: 14px;
-  background: rgba(17, 24, 39, 0.03);
-  border: 1px solid rgba(17, 24, 39, 0.06);
-  color: rgba(17, 24, 39, 0.85);
+  background: var(--dark-003);
+  border: 1px solid var(--dark-006);
+  color: var(--dark-085);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.92rem;
 }
 
 .contact-pill:hover {
-  background: rgba(197, 163, 103, 0.12);
-  border-color: rgba(197, 163, 103, 0.25);
+  background: var(--gold-012);
+  border-color: var(--gold-025);
 }
 
 .participant-actions {
@@ -139,8 +139,8 @@
 }
 
 .btn-card {
-  border: 1px solid rgba(40, 13, 139, 0.14);
-  background: rgba(40, 13, 139, 0.04);
+  border: 1px solid var(--primary-014);
+  background: var(--primary-004);
   color: var(--bg-dark);
   padding: 10px 14px;
   border-radius: 14px;
@@ -153,18 +153,18 @@
 }
 
 .btn-card:hover {
-  background: rgba(40, 13, 139, 0.08);
+  background: var(--primary-008);
   transform: translateY(-1px);
 }
 
 .btn-card.secondary {
-  border-color: rgba(239, 68, 68, 0.2);
-  background: rgba(239, 68, 68, 0.06);
-  color: rgb(185, 28, 28);
+  border-color: var(--danger-020);
+  background: var(--danger-006);
+  color: var(--danger-text);
 }
 
 .btn-card.secondary:hover {
-  background: rgba(239, 68, 68, 0.1);
+  background: var(--danger-010);
 }
 
 @media (max-width: 900px) {

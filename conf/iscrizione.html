@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIIN - Nuova iscrizione</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="nuovo.css">
+    <link rel="stylesheet" href="iscrizione.css">
+    <link rel="preload" as="script" href="shared.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.svg" alt="logo">
+            </div>
+
+            <a class="location-card" href="https://chiesapandino.it/">
+                <div class="icon-plus"><i class="fa-solid fa-cross"></i></div>
+                <div class="text">
+                    <strong>Oratorio di Pandino</strong>
+                    <span>Chiesa di Pandino</span>
+                </div>
+            </a>
+
+            <nav class="menu">
+                <p class="menu-label">NAVIGAZIONE</p>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home page</a></li>
+                    <li ><a href="partecipanti.html"><i class="fa-solid fa-users"></i> Elenco partecipanti</a></li>
+                    <li class="active"><a href="iscrizione.html"><i class="fa-solid fa-file-signature"></i> Nuova iscrizione</a></li>
+                </ul>
+
+                <p class="menu-label">GESTIONE</p>
+                <ul>
+                    <li><a href="memoria.html"><i class="fa-solid fa-list-check"></i> Iscrizioni</a></li>
+                    <li><a href="nuovo.html"><i class="fa-solid fa-user-plus"></i> Aggiungi partecipante</a></li>
+                    <li><a href="pagamenti.html"><i class="fa-solid fa-wallet"></i> Pagamenti</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a class="user-info" href="settings.html">
+                    <div class="avatar">#abbnomeutente</div>
+                    <span>#nomeutente</span>
+                    <i class="fa-solid fa-gear"></i>
+                </a>
+                <a href="https://giin.chiesapandino.it/" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="breadcrumb">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>Nuova iscrizione</span>
+                </div>
+            </header>
+
+            <section class="hero-card">
+                <div class="hero-content">
+                    <div class="hero-icon">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <div class="hero-text">
+                        <h2>Nuova Iscrizione</h2>
+                        <p>Scegli l'evento e avvia la registrazione per il partecipante.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section fade-in">
+                <div class="events-toolbar">
+                    <div>
+                        <span class="section-kicker">Eventi disponibili</span>
+                        <h3>Seleziona un'iscrizione</h3>
+                    </div>
+                    <button class="filter-button" type="button">
+                        <i class="fa-solid fa-filter"></i>
+                        Tutti gli eventi
+                    </button>
+                </div>
+
+                <article class="event-card event-card-featured">
+                    <div class="featured-mark">
+                        <i class="fa-solid fa-star"></i>
+                        In evidenza
+                    </div>
+                    <div class="event-visual">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-year">2026</span>
+                        <h4>GREST - Iscrizione</h4>
+                        <p>Il Grest 2026 si svolgera da mercoledi 10 giugno a venerdi 03 luglio 2026.</p>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 10 giugno - 03 luglio</span>
+                            <span><i class="fa-solid fa-location-dot"></i> Oratorio di Pandino</span>
+                        </div>
+                    </div>
+                    <a class="select-event" href="#">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        Seleziona
+                    </a>
+                </article>
+
+                <div class="events-grid">
+                    <article class="event-card">
+                        <span class="event-year">2026</span>
+                        <h4>Campo estivo I turno - San Giacomo</h4>
+                        <p>Estate in oratorio, aria fresca di montagna e giornate pensate per crescere insieme.</p>
+                        <div class="event-meta">
+                            <span><i class="fa-solid fa-users"></i> Superiori I-IV</span>
+                        </div>
+                        <a class="select-event" href="#"><i class="fa-solid fa-arrow-right"></i> Seleziona</a>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="event-year">2026</span>
+                        <h4>Campo estivo II turno - San Martino di Castrozza</h4>
+                        <p>Un'esperienza tra sentieri, amicizia e attivita condivise per ragazzi e ragazze.</p>
+                        <div class="event-meta">
+                            <span><i class="fa-solid fa-mountain-sun"></i> Medie</span>
+                        </div>
+                        <a class="select-event" href="#"><i class="fa-solid fa-arrow-right"></i> Seleziona</a>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="event-year">2026</span>
+                        <h4>GREST - Settimana 01</h4>
+                        <p>Iscrizione e pagamento da effettuarsi entro e non oltre venerdi 5 giugno 2026.</p>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-clock"></i> Prima settimana</span>
+                        </div>
+                        <a class="select-event" href="#"><i class="fa-solid fa-arrow-right"></i> Seleziona</a>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="event-year">2026</span>
+                        <h4>GREST - Settimana 02</h4>
+                        <p>Iscrizione e pagamento da effettuarsi entro e non oltre venerdi 12 giugno 2026.</p>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-clock"></i> Seconda settimana</span>
+                        </div>
+                        <a class="select-event" href="#"><i class="fa-solid fa-arrow-right"></i> Seleziona</a>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="event-year">2026</span>
+                        <h4>GREST - Settimana 03</h4>
+                        <p>Iscrizione e pagamento da effettuarsi entro e non oltre venerdi 19 giugno 2026.</p>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-clock"></i> Terza settimana</span>
+                        </div>
+                        <a class="select-event" href="#"><i class="fa-solid fa-arrow-right"></i> Seleziona</a>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="event-year">2026</span>
+                        <h4>GREST - Settimana 04</h4>
+                        <p>Iscrizione e pagamento da effettuarsi entro e non oltre venerdi 26 giugno 2026.</p>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-clock"></i> Quarta settimana</span>
+                        </div>
+                        <a class="select-event" href="#"><i class="fa-solid fa-arrow-right"></i> Seleziona</a>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="event-year">2026</span>
+                        <h4>Iscrizione animatori - Grest</h4>
+                        <p>Per chi vuole costruire e accompagnare l'esperienza del Grest estivo.</p>
+                        <div class="event-meta">
+                            <span><i class="fa-solid fa-hands-holding-child"></i> Animatori</span>
+                        </div>
+                        <a class="select-event" href="#"><i class="fa-solid fa-arrow-right"></i> Seleziona</a>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="event-year">2026</span>
+                        <h4>Presentazione Grest a Cremona</h4>
+                        <p>Incontro di presentazione per conoscere tema, attivita e dettagli organizzativi.</p>
+                        <div class="event-meta">
+                            <span><i class="fa-solid fa-person-chalkboard"></i> 17 maggio</span>
+                        </div>
+                        <a class="select-event" href="#"><i class="fa-solid fa-arrow-right"></i> Seleziona</a>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="event-year">2025</span>
+                        <h4>Catechesi</h4>
+                        <p>Percorso di iniziazione alla fede cristiana per bambini e ragazzi.</p>
+                        <div class="event-meta">
+                            <span><i class="fa-solid fa-wallet"></i> Elementari e medie</span>
+                        </div>
+                        <a class="select-event" href="#"><i class="fa-solid fa-arrow-right"></i> Seleziona</a>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="shared.js"></script>
+</body>
+</html>

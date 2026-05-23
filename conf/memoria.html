@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIIN - Lista iscrizioni</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="memoria.css">
+    <link rel="preload" as="script" href="shared.js">
+    <script src="shared.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.svg" alt="logo">
+            </div>
+            <a class="location-card" href="https://chiesapandino.it/">
+                <div class="icon-plus"><i class="fa-solid fa-cross"></i></div>
+                <div class="text">
+                    <strong>Oratorio di Pandino</strong>
+                    <span>Chiesa di Pandino</span>
+                </div>
+            </a>
+            <nav class="menu">
+                <p class="menu-label">NAVIGAZIONE</p>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home page</a></li>
+                    <li><a href="partecipanti.html"><i class="fa-solid fa-users"></i> Elenco partecipanti</a></li>
+                    <li><a href="iscrizione.html"><i class="fa-solid fa-file-signature"></i> Nuova iscrizione</a></li>
+                </ul>
+                <p class="menu-label">GESTIONE</p>
+                <ul>
+                    <li class="active"><a href="#"><i class="fa-solid fa-list-check"></i> Iscrizioni</a></li>
+                    <li><a href="nuovo.html"><i class="fa-solid fa-user-plus"></i> Aggiungi partecipante</a></li>
+                    <li><a href="pagamenti.html"><i class="fa-solid fa-wallet"></i> Pagamenti</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a class="user-info" href="settings.html">
+                    <div class="avatar">#abbnomeutente</div>
+                    <span>#nomeutente</span>
+                    <i class="fa-solid fa-gear"></i>
+                </a>
+                <a href="https://giin.chiesapandino.it/" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="breadcrumb">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>Lista iscrizioni</span>
+                </div>
+            </header>
+            <section class="hero-card">
+                <div class="hero-content">
+                    <div class="hero-icon-box">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="hero-text">
+                        <h2>Lista iscrizioni</h2>
+                        <p>Visualizza e gestisci tutte le iscrizioni attive, in attesa o annullate.</p>
+                    </div>
+                </div>
+                <a href="iscrizione.html" class="btn-new"><i class="fa-solid fa-plus"></i> Nuova iscrizione</a>
+            </section>
+            <section class="filters-section">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Cerca per nome, cognome o email...">
+                </div>
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option value="">Tutti gli stati</option>
+                        <option value="confermato">Confermati</option>
+                        <option value="attesa">In attesa</option>
+                        <option value="annullato">Annullati</option>
+                    </select>
+                    <select class="filter-select">
+                        <option value="">Tutte le attività</option>
+                        <option value="grest">GREST 2026</option>
+                        <option value="calcio">Torneo Calcio</option>
+                        <option value="gita">Gita Montagna</option>
+                    </select>
+                </div>
+            </section>
+            <div class="table-container">
+                <table class="registrations-table">
+                    <thead>
+                        <tr>
+                            <th>Partecipante</th>
+                            <th>Attività</th>
+                            <th>Data</th>
+                            <th>Stato</th>
+                            <th>Azioni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Partecipante">
+                                <div class="participant-info">
+                                    <div class="participant-avatar" style="background-color: #3498db; color: #fff;">MR</div>
+                                    <div class="participant-details">
+                                        <span class="participant-name">Marco Rossi</span>
+                                        <span class="participant-subtext">marco.rossi@email.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-label="Attività">GREST 2026</td>
+                            <td data-label="Data">18/05/2026</td>
+                            <td data-label="Stato">
+                                <span class="badge badge-confermato">
+                                    <i class="fa-solid fa-circle-check"></i> Confermato
+                                </span>
+                            </td>
+                            <td data-label="Azioni">
+                                <div class="actions-cell">
+                                    <a href="iscrizione.html" class="btn-action" title="Modifica">
+                                         <i class="fa-solid fa-pen"></i>
+                                    </a>
+                                    <button class="btn-action btn-delete" title="Elimina"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Partecipante">
+                                <div class="participant-info">
+                                    <div class="participant-avatar" style="background-color: #e67e22; color: #fff;">GB</div>
+                                    <div class="participant-details">
+                                        <span class="participant-name">Giulia Bianchi</span>
+                                        <span class="participant-subtext">giulia.bianchi@email.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-label="Attività">Gita in Montagna</td>
+                            <td data-label="Data">19/05/2026</td>
+                            <td data-label="Stato">
+                                <span class="badge badge-attesa">
+                                    <i class="fa-solid fa-clock"></i> In attesa
+                                </span>
+                            </td>
+                            <td data-label="Azioni">
+                                <div class="actions-cell">
+                                    <a href="iscrizione.html" class="btn-action" title="Modifica">
+                                         <i class="fa-solid fa-pen"></i>
+                                    </a>
+                                    <button class="btn-action btn-delete" title="Elimina"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Partecipante">
+                                <div class="participant-info">
+                                    <div class="participant-avatar" style="background-color: #9b59b6; color: #fff;">LV</div>
+                                    <div class="participant-details">
+                                        <span class="participant-name">Luca Verdi</span>
+                                        <span class="participant-subtext">luca.verdi@email.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-label="Attività">Torneo Calcio</td>
+                            <td data-label="Data">15/05/2026</td>
+                            <td data-label="Stato">
+                                <span class="badge badge-annullato">
+                                    <i class="fa-solid fa-circle-xmark"></i> Annullato
+                                </span>
+                            </td>
+                            <td data-label="Azioni">
+                                <div class="actions-cell">
+                                    <a href="iscrizione.html" class="btn-action" title="Modifica">
+                                         <i class="fa-solid fa-pen"></i>
+                                    </a>
+                                    <button class="btn-action btn-delete" title="Elimina"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <span class="pagination-info">Mostrati </span><span class="pagination-info-auto-page"> 1-3 </span><span class="pagination-info">di </span><span class="pagination-info-auto-subs">48</span><span class="pagination-info"> iscritti</span>
+                <div class="pagination-buttons">
+                    <button class="btn-page" disabled><i class="fa-solid fa-chevron-left"></i> Precedente</button>
+                    <button class="btn-page">Successivo <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

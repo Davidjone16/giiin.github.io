@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIIN - Impostazioni</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.svg" alt="logo">
+            </div>
+
+            <a class="location-card" href="https://chiesapandino.it/">
+                <div class="icon-plus"><i class="fa-solid fa-cross"></i></div>
+                <div class="text">
+                    <strong>Oratorio di Pandino</strong>
+                    <span>Chiesa di Pandino</span>
+                </div>
+            </a>
+
+            <nav class="menu">
+                <p class="menu-label">NAVIGAZIONE</p>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home page</a></li>
+                    <li><a href="partecipanti.html"><i class="fa-solid fa-users"></i> Elenco partecipanti</a></li>
+                    <li><a href="iscrizione.html"><i class="fa-solid fa-file-signature"></i> Nuova iscrizione</a></li>
+                </ul>
+
+                <p class="menu-label">GESTIONE</p>
+                <ul>
+                    <li><a href="memoria.html"><i class="fa-solid fa-list-check"></i> Iscrizioni</a></li>
+                    <li><a href="nuovo.html"><i class="fa-solid fa-user-plus"></i> Aggiungi partecipante</a></li>
+                    <li><a href="pagamenti.html"><i class="fa-solid fa-wallet"></i> Pagamenti</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a class="user-info" href="settings.html">
+                    <div class="avatar">#abbnomeutente</div>
+                    <span>#nomeutente</span>
+                    <i class="fa-solid fa-gear"></i>
+                </a>
+                <a href="https://giin.chiesapandino.it/" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="breadcrumb">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>Impostazioni</span>
+                </div>
+            </header>
+
+            <section class="settings-section">
+                <div class="settings-container">
+                    <h2>Impostazioni</h2>
+                    
+                    <div class="settings-grid">
+                        <button class="settings-item-large" onclick="alert('Profilo - In sviluppo')">
+                            <div class="settings-icon-large">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="settings-text-large">
+                                <h3>Profilo Personale</h3>
+                                <p>Modifica i dati del tuo account, inclusi nome, cognome, email e numero di telefono. Consulta anche la cronologia di accesso e i dispositivi collegati al tuo account.</p>
+                            </div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                        <button class="settings-item-large" onclick="alert('Sicurezza - In sviluppo')">
+                            <div class="settings-icon-large">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            <div class="settings-text-large">
+                                <h3>Sicurezza e Accesso</h3>
+                                <p>Cambia la tua password, abilita l'autenticazione a due fattori per una maggiore protezione, e gestisci le sessioni attive su altri dispositivi.</p>
+                            </div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                        <button class="settings-item-large" onclick="alert('Preferenze - In sviluppo')">
+                            <div class="settings-icon-large">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <div class="settings-text-large">
+                                <h3>Preferenze e Notifiche</h3>
+                                <p>Configura le notifiche email, gestisci le preferenze di privacy, scegli il tema dell'interfaccia e personalizza l'esperienza d'uso secondo le tue necessità.</p>
+                            </div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

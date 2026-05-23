@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIIN - Lista iscrizioni</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="memoria.css">
+    <link rel="preload" as="script" href="shared.js">
+    <script src="shared.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.svg" alt="logo">
+            </div>
+            <a class="location-card" href="https://chiesapandino.it/">
+                <div class="icon-plus"><i class="fa-solid fa-cross"></i></div>
+                <div class="text">
+                    <strong>Oratorio di Pandino</strong>
+                    <span>Chiesa di Pandino</span>
+                </div>
+            </a>
+            <nav class="menu">
+                <p class="menu-label">NAVIGAZIONE</p>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home page</a></li>
+                    <li><a href="partecipanti.html"><i class="fa-solid fa-users"></i> Elenco partecipanti</a></li>
+                    <li><a href="iscrizione.html"><i class="fa-solid fa-file-signature"></i> Nuova iscrizione</a></li>
+                </ul>
+                <p class="menu-label">GESTIONE</p>
+                <ul>
+                    <li><a href="iscrizioni.html"><i class="fa-solid fa-list-check"></i> Iscrizioni</a></li>
+                    <li><a href="nuovo.html"><i class="fa-solid fa-user-plus"></i> Aggiungi partecipante</a></li>
+                    <li class="active"><a href="pagamenti.html"><i class="fa-solid fa-wallet"></i> Pagamenti</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a class="user-info" href="settings.html">
+                    <div class="avatar">#abbnomeutente</div>
+                    <span>#nomeutente</span>
+                    <i class="fa-solid fa-gear"></i>
+                </a>
+                <a href="https://giin.chiesapandino.it/" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="breadcrumb">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>Lista pagamenti</span>
+                </div>
+            </header>
+            <section class="hero-card">
+                <div class="hero-content">
+                    <div class="hero-icon-box">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <div class="hero-text">
+                        <h2>Lista pagamenti</h2>
+                        <p>Visualizza la lista dei movimenti per iscritto</p>
+                    </div>
+                </div>
+                <a href="iscrizione.html" class="btn-new"><i class="fa-solid fa-plus"></i> Nuova iscrizione</a>
+            </section>
+            <section class="filters-section">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Cerca per nome, cognome o email...">
+                </div>
+            </section>
+            <div class="table-container">
+                <table class="registrations-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cognome</th>
+                            <th>Attività</th>
+                            <th>Importo</th>
+                            <th>Data pagamento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Nome">Mario</td>
+                            <td data-label="Cognome">Rossi</td>
+                            <td data-label="Attività">Canto</td>
+                            <td data-label="Importo">€ 50,00</td>
+                            <td data-label="Data pagamento">01/09/2024</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Nome">Luigi</td>
+                            <td data-label="Cognome">Bianchi</td>
+                            <td data-label="Attività">Calcio</td>
+                            <td data-label="Importo">€ 40,00</td>
+                            <td data-label="Data pagamento">05/09/2024</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Nome">Giulia</td>
+                            <td data-label="Cognome">Verdi</td>
+                            <td data-label="Attività">Teatro</td>
+                            <td data-label="Importo">€ 45,00</td>
+                            <td data-label="Data pagamento">10/09/2024</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

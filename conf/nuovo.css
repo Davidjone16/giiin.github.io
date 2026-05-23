@@ -1,13 +1,4 @@
 :root {
-    --bg-dark: #280d8b;
-    --bg-light: #f5f3ef;
-    --accent-gold: #c5a367;
-    --text-white: #ffffff;
-    --text-gray: #a0a0a0;
-    --card-white: #ffffff;
-    --shadow-light: rgba(0,0,0,0.03);
-    --shadow-medium: rgba(0,0,0,0.1);
-    --shadow-premium: 0 20px 40px rgba(0,0,0,0.08);
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
 }
@@ -21,7 +12,7 @@
 
 body {
     background-color: var(--bg-light);
-    color: #333;
+    color: var(--text-default);
     overflow-x: hidden;
 }
 
@@ -55,8 +46,8 @@ body {
 }
 
 .location-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--white-005);
+    border: 1px solid var(--white-010);
     border-radius: 12px;
     padding: 15px;
     margin-top: 30px;
@@ -66,7 +57,7 @@ body {
 }
 
 .icon-plus {
-    background: rgba(255,255,255,0.1);
+    background: var(--white-010);
     width: 40px;
     height: 40px;
     border-radius: 8px;
@@ -115,12 +106,12 @@ body {
 }
 
 .menu li:hover { 
-    background: rgba(255,255,255,0.08); 
+    background: var(--white-008); 
     transform: translateX(5px); 
 }
 
 .menu li.active { 
-    background: rgba(255,255,255,0.1); 
+    background: var(--white-010); 
 }
 
 .menu li.active::before {
@@ -149,7 +140,7 @@ body {
 }
 
 .sidebar-footer { 
-    border-top: 1px solid rgba(255,255,255,0.1); 
+    border-top: 1px solid var(--white-010); 
     padding-top: 20px; 
 }
 
@@ -170,7 +161,7 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px var(--black-020);
 }
 
 .logout { 
@@ -184,7 +175,7 @@ body {
 }
 
 .logout:hover {
-    color: #ff4d4d;
+    color: var(--danger);
 }
 
 .main-content {
@@ -210,7 +201,7 @@ body {
 }
 
 .btn-icon {
-    background: #e5e0d8;
+    background: var(--button-neutral);
     border: none;
     padding: 10px;
     border-radius: 10px;
@@ -220,15 +211,15 @@ body {
 }
 
 .btn-icon:hover { 
-    background: #d4c9b8; 
+    background: var(--button-neutral-hover); 
     transform: translateY(-2px); 
 }
 
 .hero-card {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, #3d1db3 100%);
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-gradient-soft) 100%);
     border-radius: 24px;
     padding: 35px 45px;
-    color: white;
+    color: var(--text-white);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -245,7 +236,7 @@ body {
     right: -10%;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--white-005) 0%, var(--transparent) 70%);
 }
 
 .hero-content { 
@@ -258,13 +249,13 @@ body {
 .hero-icon-box {
     width: 65px;
     height: 65px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid var(--white-020);
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    background: rgba(255,255,255,0.1);
+    background: var(--white-010);
     backdrop-filter: blur(5px);
 }
 
@@ -279,7 +270,7 @@ body {
     padding: 45px;
     border-radius: 24px;
     box-shadow: var(--shadow-premium);
-    border: 1px solid rgba(0,0,0,0.02);
+    border: 1px solid var(--black-002);
 }
 
 .registration-form {
@@ -302,7 +293,7 @@ body {
     margin-bottom: 10px;
     font-weight: 600;
     font-size: 0.8rem;
-    color: #666;
+    color: var(--text-form-label);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -311,9 +302,9 @@ body {
 .content-section select {
     width: 100%;
     padding: 14px 18px;
-    border: 1.5px solid #eee;
+    border: 1.5px solid var(--input-border);
     border-radius: 12px;
-    background-color: #fafafa;
+    background-color: var(--input-bg);
     font-size: 1rem;
     transition: var(--transition-fast);
 }
@@ -321,8 +312,8 @@ body {
 .content-section input:focus, 
 .content-section select:focus {
     border-color: var(--accent-gold);
-    background-color: #fff;
-    box-shadow: 0 0 0 4px rgba(197, 163, 103, 0.1);
+    background-color: var(--card-white);
+    box-shadow: 0 0 0 4px var(--gold-010);
     outline: none;
 }
 
@@ -335,7 +326,7 @@ body {
 
 .btn-save {
     background: var(--bg-dark);
-    color: white;
+    color: var(--text-white);
     border: none;
     padding: 16px 45px;
     border-radius: 12px;
@@ -347,9 +338,9 @@ body {
 }
 
 .btn-save:hover {
-    background: #1e0a6b;
+    background: var(--bg-dark-hover);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(40, 13, 139, 0.25);
+    box-shadow: 0 8px 20px var(--primary-025);
 }
 
 .btn-save:active {
@@ -368,7 +359,7 @@ body {
         width: 100%; 
         padding: 1.5rem;
     }
-    .sidebar-footer, .location-card, .menu-label, .menu li.active::before { display: none; }
+    .location-card, .menu-label, .menu li.active::before { display: none; }
     .menu { margin-top: 10px; }
     .menu ul { 
         display: flex; 
@@ -379,7 +370,7 @@ body {
     .menu li { 
         margin-bottom: 0; 
         white-space: nowrap;
-        background: rgba(255,255,255,0.05);
+        background: var(--white-005);
     }
     .main-content { padding: 1.5rem; }
     .registration-form { grid-template-columns: 1fr; }
@@ -397,8 +388,9 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Aggiunte al tuo CSS esistente */
 
+
+/* Aggiunte al tuo CSS esistente */
 .field-note {
     display: block;
     margin-top: 8px;
@@ -410,9 +402,9 @@ body {
 textarea {
     width: 100%;
     padding: 14px 18px;
-    border: 1.5px solid #eee;
+    border: 1.5px solid var(--input-border);
     border-radius: 12px;
-    background-color: #fafafa;
+    background-color: var(--input-bg);
     font-size: 1rem;
     resize: vertical;
     transition: var(--transition-fast);
@@ -421,12 +413,12 @@ textarea {
 textarea:focus {
     border-color: var(--accent-gold);
     outline: none;
-    background-color: #fff;
+    background-color: var(--card-white);
 }
 
 /* Fix per input readonly (Codice Fiscale) */
 input[readonly] {
-    background-color: #ececec;
+    background-color: var(--input-readonly-bg);
     cursor: not-allowed;
     color: var(--bg-dark);
     font-weight: 700;
@@ -455,14 +447,15 @@ input[readonly] {
         height: 100vh;
         z-index: 99999 !important; /* Numero altissimo per stare sopra la top-bar */
         transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        display: flex !important; /* Sovrascrive eventuali nascondimenti */
-        box-shadow: 10px 0 30px rgba(0,0,0,0.2);
+        display: flex !important; /* Sovrascrive eventuali nascondimenti */ box-shadow: 10px 0 30px var(--black-020);
     }
+
 
     /* Classe attivata dal JS */
     .sidebar.mobile-open {
         left: 0 !important;
     }
+
 
     /* Rendi l'icona hamburger più facile da cliccare */
     .breadcrumb .fa-bars {

@@ -101,7 +101,7 @@
         if (!comune) {
             inputs.result.value = '';
             inputs.info.textContent = "Comune non trovato nel database.";
-            inputs.info.style.color = "#ff4d4d";
+            inputs.info.style.color = "var(--danger)";
             return;
         }
 
